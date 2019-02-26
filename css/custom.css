@@ -1,0 +1,38 @@
+/* Your styles go here */
+.padding-0{
+  padding-right:0;
+  padding-left:0;
+}
+
+.foodcard{
+  padding:0;
+  margin:0 0 20px;
+}
+
+.foodcard p{
+  padding:0;
+  margin:0 0 2 0;
+}
+
+.foodcard h5{
+  padding:0;
+  margin:0 0 0 0;
+}
+
+.about hr {
+  height: 0px;
+}
+
+.food {
+    min-height: 720px;
+}
+
+.about {
+    min-height: 720px;
+}
+
+.row ul{
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+}

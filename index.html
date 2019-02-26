@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Friend Finder`</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon.ico">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Base Styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700%7cRoboto:300,400" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand active" href="#banner"></i>Friend Finder</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#search"><i class="fa fa-shopping-basket"></i> Search Friends</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <span id="banner"></span>
+    <section class="banner">
+      <div class="jumbotron">
+        <div class="container">
+          <div class="content">
+            <h1>Friend Finder</h1>
+            <h5>“That which is measured improves. That which is measured and reported improves exponentially.”<br/>Karl Pearson</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <span class="anchor" id="search"></span>
+    <section class="search">
+      <div class="container padding-0">
+      </br>
+        <div class="row text-wrap">
+          <div class="col-sm-4 text-center">
+          </div>
+          <div class="col-sm-4 text-center">
+            <span class="text-center"><h2>Foods</h2>
+          </div>
+          <div class="col-sm-4 text-center">
+            <br>
+            <span class="text-center"><button type="button" class="btn btn-primary btn-sm" role="button" title="Add a food to the database" id="newFoodButton" data-toggle="modal" data-target="#modal2">Add New Food</button></span>
+          </div>
+        </div>
+        <div class="row pet-boxes" id="all-pets">
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="text-center">Amy Petrie - February 2018  <br><a href="http://hh-themes.com/" target="_blank"> Made with Bootstrap HH</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="back-to-top"><i class="fa fa-arrow-circle-up"></i></div>
+    </section>
+    <!-- Modal 1-->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Food</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" id="editFoodName" class="edit"></br>
+                Food Name</br><br>
+                Food Id: <span id="editFoodId"></span>
+              </div>
+              <div class="col-md-4">
+                <input type="number" id="editFoodCals" class="edit"></br>
+                Calories</br><br>
+                <span id="foodEdited"></span>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" onClick="clearModal()">Close</button>
+            <a class="btn" onclick="saveFood()">Save Food</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Food</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" id="newFoodName" class="new"></br>
+                Food Name</br>
+              </div>
+              <div class="col-md-4">
+                <input type="number" id="newFoodCals" class="new"></br>
+                Calories</br><br>
+                <span id="foodCreated"></span>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" onClick="clearModal()">Close</button>
+            <a class="btn" onclick="addNewFood()">Add Food</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 3-->
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Food to Meal </h4>
+            <p id="mealIdentifier"></p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <ul id="availableFoods"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" onClick="clearModal()">Close</button>
+            <a class="btn" onClick="updateMeal()">Update Meal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 4-->
+    <div class="modal fade" id="modal4" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Remove Food from Meal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul id="currentFoods"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" onClick="clearModal()">Close</button>
+            <a class="btn" onClick="removeMealFood();">Remove Food(s)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 5-->
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Project 5</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="images/work5.png" alt="work5"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellu.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <a class="btn" href="#">Live Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 6-->
+    <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Project 6</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="images/work6.png" alt="work6"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellu.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <a class="btn" href="#">Live Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 7-->
+    <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Project 7</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="images/work7.png" alt="work7"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellu.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <a class="btn" href="#">Live Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 8-->
+    <div class="modal fade" id="modal8" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Project 8</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="images/work8.png" alt="work8"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellu.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <a class="btn" href="#">Live Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.matchHeight.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/wow.js"></script>
+    <!-- <script type="text/javascript" src="./index.js"></script> -->
+    <script src="./dist/main.bundle.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>

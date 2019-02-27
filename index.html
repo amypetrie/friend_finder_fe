@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Friend Finder`</title>
+    <title>Friend Finder</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon.ico">
@@ -50,7 +50,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#search"><i class="fa fa-shopping-basket"></i> Search Friends</a></li>
+            <li><a href="#daily-friend"></i> Friend of the Day</a></li>
+            <li><a href="#search"><i class="fa fa-search fa-lg" aria-hidden="true"></i> Find a Friend</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -63,24 +64,43 @@
         <div class="container">
           <div class="content">
             <h1>Friend Finder</h1>
-            <h5>“That which is measured improves. That which is measured and reported improves exponentially.”<br/>Karl Pearson</h5>
+            <h5>“Until one has loved an animal, part of one's soul remains unawakened.”<br/>Anatole France</h5>
           </div>
         </div>
       </div>
     </section>
+    <span class="anchor" id="daily-friend"></span>
+    <section class="about" id="daily" style="height:600px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 about-info js-matchheight wow fadeInLeft" data-wow-offset="10">
+            <h2>Friend of the Day</h2>
+            <h4 id="daily-name">Name</h4>
+            <h5 id="daily-location">Location<h5>
+            <p id="daily-description">description</p>
+            <br/>
+          </div>
+          <div class="col-xs-12 col-md-6 about-info js-matchheight wow fadeInRight" data-wow-offset="10">
+              <img src="" style="width:400px;height:400px;" id="daily-picture" alt="" />
+            </div>
+        </div>
+      </div>
+    </section>
+
+
+
     <span class="anchor" id="search"></span>
     <section class="search">
       <div class="container padding-0">
       </br>
+      <span class="text-center"><h2>Find a Friend
+        <button type="button" class="btn btn-primary btn-sm text-center" role="button" title="Search" id="searchButton">Search</button></h2></span>
         <div class="row text-wrap">
           <div class="col-sm-4 text-center">
           </div>
           <div class="col-sm-4 text-center">
-            <span class="text-center"><h2>Foods</h2>
           </div>
           <div class="col-sm-4 text-center">
-            <br>
-            <span class="text-center"><button type="button" class="btn btn-primary btn-sm" role="button" title="Add a food to the database" id="newFoodButton" data-toggle="modal" data-target="#modal2">Add New Food</button></span>
           </div>
         </div>
         <div class="row pet-boxes" id="all-pets">
@@ -91,7 +111,11 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <p class="text-center">Amy Petrie - February 2018  <br><a href="http://hh-themes.com/" target="_blank"> Made with Bootstrap HH</a></p>
+            <p class="text-center">
+            Created by <a href="https://github.com/amypetrie/" target="_blank">Amy Petrie</a> // Made with <a href="http://hh-themes.com/" target="_blank">Bootstrap HH</a>
+            <br>
+            Updated February 2019
+          </p>
           </div>
         </div>
       </div>

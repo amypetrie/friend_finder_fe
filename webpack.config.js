@@ -8,7 +8,6 @@ module.exports = {
   },
   mode: 'development',
   output: {
-    path: __dirname,
     filename: "[name].bundle.js"
   },
   module: {

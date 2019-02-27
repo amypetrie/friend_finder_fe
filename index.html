@@ -70,7 +70,7 @@
       </div>
     </section>
     <span class="anchor" id="daily-friend"></span>
-    <section class="about" id="daily" style="height:600px;">
+    <section class="about" id="daily" style="height:500px;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12 col-md-6 about-info js-matchheight wow fadeInLeft" data-wow-offset="10">
@@ -86,24 +86,29 @@
         </div>
       </div>
     </section>
-
-
-
     <span class="anchor" id="search"></span>
     <section class="search">
       <div class="container padding-0">
       </br>
       <span class="text-center"><h2>Find a Friend
-        <button type="button" class="btn btn-primary btn-sm text-center" role="button" title="Search" id="searchButton">Search</button></h2></span>
-        <div class="row text-wrap">
-          <div class="col-sm-4 text-center">
-          </div>
-          <div class="col-sm-4 text-center">
-          </div>
-          <div class="col-sm-4 text-center">
-          </div>
+        <button type="button" class="btn btn-primary btn-sm text-center" role="button" title="Search" id="search-button">Search</button></h2></span>
+        <form id="petGender" name="petGender">
+          <label class="radio-inline"><input type="radio" id="form-male" name="gender" value="M">Male</label>
+          <label class="radio-inline"><input type="radio" id="form-female" name="gender" value="F">Female</label>
+          <label class="radio-inline"><input type="radio" id="form-any" name="gender" checked value="">Any</label>
+        </form>
+        <div class="input-group">
+          <span class="input-group-addon">Location</span>
+          <input id="form-location" type="text" class="form-control" name="location" placeholder="Enter a city/state or a zip code.">
         </div>
-        <div class="row pet-boxes" id="all-pets">
+        <form id="animalType" name="animalType">
+          <label class="radio-inline"><input type="radio" id="form-cat" name="animal" value="cat">Cat</label>
+          <label class="radio-inline"><input type="radio" id="form-dog" name="animal" value="dog">Dog</label>
+          <label class="radio-inline"><input type="radio" id="form-horse" name="animal" value="horse">Horse</label>
+        </form>
+        <div class="row">
+          <div class="col-md-4" id="allResults">
+          </div>
         </div>
       </div>
     </section>
